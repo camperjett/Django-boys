@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     # my-apps
     'blog.apps.BlogConfig',
     # installed packages
-    'livereload',
 ]
 
 MIDDLEWARE = [
@@ -51,12 +50,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'livereload.middleware.LiveReloadScript',
+    
 ]
 
-MIDDLEWARE_CLASSES = (
-    'livereload.middleware.LiveReloadScript',
-)
+
 
 ROOT_URLCONF = 'mysite.urls'
 
