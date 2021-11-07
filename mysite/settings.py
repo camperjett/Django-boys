@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'r+9&!7t_beo#hh2v7usm8m-#t5ck8*03tn$9g-m6edhpef9jiz'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 
@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # my-apps
     'blog.apps.BlogConfig',
+    # installed packages
+    'livereload',
 ]
 
 MIDDLEWARE = [
@@ -49,7 +51,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'livereload.middleware.LiveReloadScript',
 ]
+
+MIDDLEWARE_CLASSES = (
+    'livereload.middleware.LiveReloadScript',
+)
 
 ROOT_URLCONF = 'mysite.urls'
 
